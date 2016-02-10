@@ -18,8 +18,9 @@ teamindexurl = mainurl + '/teams/'
 #paths
 allteampath = currentpath + '/data/all_teams.csv';
 
-#global vars
-teams = []
+#global function
+def processHtmlString(value):
+	return value.strip().replace(u'\xa0', u' ').replace('*','').replace(',',' ');
 
 webpage = urlopen(teamindexurl).read()
 soup = BeautifulSoup(webpage,  "html.parser")
@@ -33,13 +34,13 @@ allteamout = open(allteampath,'w')
 #all teams header infor
 #write out table header
 for j in header.find_all("th"):
-	    allteamout.write(j.get_text()+",")
+	    allteamout.write(processHtmlString(j.get_text())+",")
 allteamout.write("\n")
 
 #write out each team basic info
 for i in table:
 	for j in i.find_all("td"):
-		 allteamout.write(j.get_text().replace('*','')+",")
+		 allteamout.write(processHtmlString(j.get_text())+",")
 	allteamout.write("\n")
 	
 allteamout.close()
@@ -60,12 +61,12 @@ def writeTeamSeasonStats(url):
         table = soup.find("table",{"id":teamname}).find("tbody").findAll("tr")
         out = open(outpath,'w')
         for j in header.find_all("th"):
-		out.write(j.get_text().replace(u'\xa0', u' ')+",")
+		out.write(processHtmlString(j.get_text())+",")
 	out.write("\n")
 	
 	for i in table:
 		for j in i.find_all("td"):
- 	            out.write(j.get_text().replace(u'\xa0', u' ').replace('*','')+",")
+ 	            out.write(processHtmlString(j.get_text())+",")
 		out.write("\n")
 	
 	out.close()	
