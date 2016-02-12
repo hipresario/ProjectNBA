@@ -35,10 +35,10 @@ def writeTeamInfoByBS():
 	    tds = i.find_all("td")
 	    href = tds[0].find('a').get('href')
 	    name = href.split('/')[2]
-	    out.write(name + ',')
+            data = [name]
 	    for j in tds:
-		out.write(processHtmlString(j.get_text())+",")
-	    out.write("\n")
+		data.append(processHtmlString(j.get_text()))
+	    out.write(','.join(data) + "\n")
 	
 	out.close()
 	print('Going to sleep 1 sec...')
@@ -46,4 +46,4 @@ def writeTeamInfoByBS():
 	print('All Done!')
 	return;
 
-#writeTeamInfoByBS()
+writeTeamInfoByBS()

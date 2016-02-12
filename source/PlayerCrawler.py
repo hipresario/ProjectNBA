@@ -26,14 +26,14 @@ playerstatspath = currentpath + '/data/player_stats.csv'
 def writePlayerInfo():
 	#create csv file with prefixed header tags
 	out = open(playerprofilepath,'a')
-	tags = 'Name,Position,Shoots,Height,Weight,Born,High School,College,Draft,NBA Debut,Experience,D-League\n'
+	tags = 'Player,From,To,Pos,Ht,Wt,DOB,College\n'
 	out.write(tags)
 	out.close()
 	print("starting to get all players information...")
-	urls = CompareMethods.getPlayerUrls(True)
+	urls = CompareMethods.getPlayersIndexUrls(True)
 	for url in urls:
    		href = mainurl + url
-   		PlayerInfo.getPlayerInfoByBS(href, playerprofilepath)
+   		PlayerInfo.getPlayerInfo(True, href, playerprofilepath)
    	print ('Player Info All Done!')
 	return;
 
@@ -83,5 +83,5 @@ def writePlayerStats():
 	print ('Stats All Done!')
 	return;
 writePlayerInfo()
-writePlayerSalary()
-writePlayerStats()
+#writePlayerSalary()
+#writePlayerStats()
