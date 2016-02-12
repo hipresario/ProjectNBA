@@ -6,47 +6,54 @@
 # 2. from each URL page get the season stas 
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
+import time
 import csv
 import os
-import time
-import Player
-#urls 
-mainurl = 'http://www.basketball-reference.com'
-currentpath = os.path.dirname(os.path.abspath(__file__))
-playersindexurl = mainurl + '/players/'
 
-#paths
-allplayerspath = currentpath + '/data/all_players.csv';
-#create csv file with prefixed header tags
-out = open(allplayerspath,'a')
-tags = 'Name,Position,Shoots,Height,Weight,Born,High School,College,Draft,NBA Debut,Experience,D-League\n';
-out.write(tags)
-out.close()
+def getPlayerStats(playerurl,outpath): 
+	
+ 	#replace html special/empty characters
+	def processHtmlString(value):
+	       temp = value.replace(u'\u2605',u'').replace(u'\xa0', u'').replace(u'\u25aa',u'').replace(',',u'').replace('\n','').strip()
+	       return temp;
+	#must be in sequence
+	def convertDictToString(stats):
+		return ''.join(stats);
 
- 
-
-#global function
-def writePlayerStats(url):
-	playerurl = mainurl + url
 	webpage = urlopen(playerurl).read()
 	soup = BeautifulSoup(webpage,  "html.parser")
-	players = soup.find("table",{"id":"players"}).findAll("strong")
-        for i in players:
-             href = mainurl + i.find("a").get("href")
-	     #call each player page
-	     Player.getPlayerInfo(href, allplayerspath)
-    
+
+	header = soup.find("div",{"id":"info_box"})
+	index = soup.find("table",{"id":"totals"})
+	
+	#get player name
+	name = processHtmlString(header.find('h1').get_text())
+
+	stats = []
+	if not index is None:
+		trs = index.find('tbody').findAll('tr')
+		#print(trs)
+		if trs:
+		  for i in trs:
+			tds = i.findAll('td')
+			#print(tds)
+			if tds:			
+			  playerinfo = [name]
+			  hasdata = tds[0].find('a')
+			  for j in tds:
+			      if hasdata:
+			         playerinfo.append(processHtmlString(j.get_text()))				
+			  if (len(playerinfo) == 31): 
+			  	stats.append(','.join(playerinfo) + '\n')
+	 
+
+	#print(convertDictToString(stats))
+	#write to file
+	out = open(outpath,'a+')
+	out.write(convertDictToString(stats))
+	out.close()
+	print (name + ' is done! Going to sleep 1 second...')
+	time.sleep(1)
 	return;
 
-webpage = urlopen(playersindexurl).read()
-soup = BeautifulSoup(webpage,  "html.parser")
-
-#get each player index page url a-z
-index = soup.find("div",{"id":"page_content"}).find("p")
-for i in index.findAll('a'):
-	href = i.get('href')
-	#print(href)
-	print("starting to get player information...")
-	writePlayerStats(href)
-
-print ('All Done!')
+#getPlayerStats('http://www.basketball-reference.com/players/j/jonesso01.html','')

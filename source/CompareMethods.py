@@ -28,7 +28,7 @@ def getPlayersIndexUrls(isRegex):
 	def getPlayerIndexHrefByRegex(webpage):
 		urls = re.findall('href="(/players/[a-z]/)"',webpage)
 		hrefs = urls[0:25] if len(urls) > 0 else []
- 		print(hrefs)
+ 		#print(hrefs)
 		return hrefs;    
 
 	playersindexurl = mainurl + '/players/'
@@ -71,7 +71,7 @@ def getPlayerUrls(isRegex):
 		playerurls = getPlayerUrlsByRegex(url) if isRegex else getPlayerUrlsByBS(url)
 		allplayerurls.extend(playerurls)
 		time.sleep(1)
- 	print(allplayerurls)
+ 	#print(allplayerurls)
 	return allplayerurls;
 
 def getTeamUrls(isRegex):
@@ -86,16 +86,39 @@ def getTeamUrls(isRegex):
 		return hrefs;
 
 	def getTeamUrlsByRegex(webpage):
-		urls = re.findall('<table class="sortable  stats_table" id="active">(.*?)</table>',webpage)
-		print(urls)
- 		hrefs = [];
+		urls = re.findall('<td align="left" ><a href="(.*?)">', webpage)
+		#only active teams
+ 		hrefs = urls[0:30]
 		return hrefs;    		
 
 	teamurl = mainurl +'/teams/'
 	webpage = urlopen(teamurl).read()
 	urls = getTeamUrlsByRegex(webpage) if isRegex else getTeamUrlsByBS(webpage)
 	time.sleep(1)
-	print(urls)
+	return urls;
+
+
+def writePlayerUrls():
+	allplayerspath = currentpath + '/data/player_urls.csv';
+	out = open(allplayerspath,'a')
+	urls = getPlayerUrls(True)
+	out.write('Player URL\n')
+	for i in urls:
+           out.write(i + '\n')
+	out.close()
+
+def writeTeamUrls():
+	allteamspath = currentpath + '/data/team_urls.csv';
+	out = open(allteamspath,'a')
+	urls = getTeamUrls(True)
+	out.write('Team,Name,URL\n')
+	for i in urls:
+	   name = i.split('/')[2]
+           out.write(name + ',' + i + '\n')
+	out.close()
+	
+#writePlayerUrls()
+#writeTeamUrls()
 
 #True for regex method
 def testAllPlayers():
@@ -107,6 +130,8 @@ def testIndexPlayers():
 def testTeamUrls():
 	getTeamUrls(True)
 
-print(timeit.Timer(testTeamUrls).timeit(number=1))
 
+
+#print time for testing methods run time
+#print(timeit.Timer(testTeamUrls).timeit(number=1))
 

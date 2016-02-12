@@ -7,28 +7,31 @@
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
 import time
+import csv
+import os
 
 def getPlayerSalary(playerurl,outpath): 
 	
  	#replace html special/empty characters
 	def processHtmlString(value):
-	       temp = value.replace(u'\xa0', u'').replace(u'\u25aa',u'').replace(',',u'').replace(u'\n','').replace(':','').rstrip('(').strip()
+	       temp = value.replace(u'\xa0', u'').replace(u'\u25aa',u'').replace(',',u'').strip()
 	       return temp.lstrip('$');
 	#must be in sequence
-	def convertDictToString(dic):
-		list = []
-		list.append(dic['Name'])
-		list.append(dic['Season'])		
-		list.append(dic['Team'])
-		list.append(dic['Lg'])		
-		list.append(dic['Salary'])
-		return ','.join(list);
+	def convertDictToString(salaries):
+	        rows = []
+		for dic in salaries:
+			list = []
+			list.append(dic['Name'])
+			list.append(dic['Season'])		
+			list.append(dic['Team'])
+			list.append(dic['Lg'])		
+			list.append(dic['Salary'])
+			rows.append(','.join(list) + '\n')
+		return ''.join(rows);
 
 	webpage = urlopen(playerurl).read()
 	soup = BeautifulSoup(webpage,  "html.parser")
 
-	
-	
 	header = soup.find("div",{"id":"info_box"})
 	index = soup.find("table",{"id":"salaries"})
 	
@@ -36,22 +39,23 @@ def getPlayerSalary(playerurl,outpath):
 	name = processHtmlString(header.find('h1').get_text())
 
 	salaries = []
-	#salaries	
-	for i in index.find('tbody').findAll('tr'):
-		tds = i.findAll('td')
-		playerinfo = {'Name':'','Season':'','Team':'','Lg':'','Salary':''}
-		playerinfo['Name'] = name
-		for j in tds :
-			if (tds.index(j) == 0):
-				playerinfo['Season'] = processHtmlString(j.get_text())
-			elif (tds.index(j) == 1):
-				playerinfo['Team'] = processHtmlString(j.get_text())
-			elif (tds.index(j) == 2):
-				playerinfo['Lg'] = processHtmlString(j.get_text())
-			else:
-				playerinfo['Salary'] = processHtmlString(j.get_text())				
-			 
-		salaries.append(playerinfo)
+	if not index is None:
+		#salaries	
+		for i in index.find('tbody').findAll('tr'):
+			tds = i.findAll('td')
+			playerinfo = {'Name':'','Season':'','Team':'','Lg':'','Salary':''}
+			playerinfo['Name'] = name
+			for j in tds :
+				if (tds.index(j) == 0):
+					playerinfo['Season'] = processHtmlString(j.get_text())
+				elif (tds.index(j) == 1):
+					playerinfo['Team'] = processHtmlString(j.get_text())
+				elif (tds.index(j) == 2):
+					playerinfo['Lg'] = processHtmlString(j.get_text())
+				else:
+					playerinfo['Salary'] = processHtmlString(j.get_text())				
+				 
+			salaries.append(playerinfo)
 	#if has contract, add new salaries
 	contract = soup.find("table",{"id":"contract"})
 	if not contract is None:
@@ -64,7 +68,7 @@ def getPlayerSalary(playerurl,outpath):
 	   c_salaries = []
 	   tds = contract.findAll('td')
 	   for k in tds:
-	        print(k)
+	        #print(k)
 		if (tds.index(k) == 0):
 			team = (processHtmlString(k.get_text()))
 			 
@@ -80,14 +84,11 @@ def getPlayerSalary(playerurl,outpath):
 		playerinfo['Salary'] = c_sal
 	   	salaries.append(playerinfo)
 
-	print(salaries)
+	#print(salaries)
 	#write to file
-	#out = open(outpath,'a+')
-	#out.write(convertDictToString(playerinfo))
-	#out.write('\n')
-	#out.close()
+	out = open(outpath,'a+')
+	out.write(convertDictToString(salaries))
+	out.close()
 	print (name + ' is done! Going to sleep 1 second...')
 	time.sleep(1)
 	return;
-
-getPlayerSalary('http://www.basketball-reference.com/players/m/maxieja01.html','')
