@@ -1,0 +1,12 @@
+NBA Champion is always the target for most of NBS team owner. 
+1)	Salary vs Salary Cap
+NBA has the team salary cap which  is a limit on the amount teams can spend on player contracts, which helps to maintain competitive balance in the league. Without a salary cap, teams with deeper pockets could simply outspend the remaining teams for the better free agents. A luxury tax payment is required of teams whose payroll exceeds a certain "tax level", determined by a complicated formula, and teams exceeding it are punished by being forced to pay bracket-based amounts for each dollar by which their payroll exceeds the tax level.
+We can extract the total salary of every year’s champion team (or top 8 teams from East conference and top 8 teams from West conference), and compare with that year’s salary cap amount (and compute the average team salary for the top 8 teams). 
+We can have the how much money spent to win one game. By comparing with the Salary cap, team owner can understand how much he/she needs to invest. 
+NBA & ABA League Index – to get the Champion Team (or top teams) 
+http://www.basketball-reference.com/leagues/
+NBA Salary Cap History
+http://www.basketball-reference.com/contracts/salary-cap-history.html
+ 
+2)	Stats for all Champion team 
+Use the Team and Opponent Stats to do the trend analysis. i.e. 3-points counts per game, 3-points % 
