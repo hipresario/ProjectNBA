@@ -158,7 +158,8 @@ def writePlayerUrlsSinceYear(year):
            out.write(i + '\n')
 	out.close()
 	return
-	
+
+#enable to run	
 #writePlayerUrls()
 #writeTeamUrls()
 #writePlayerUrlsSinceYear(2000)

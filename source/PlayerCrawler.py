@@ -92,6 +92,7 @@ def writePlayerStats():
 		PlayerStats.getPlayerStats(href, playerstatspath)
 	print ('Stats All Done!')
 	return;
+
 writePlayerInfo()
-#writePlayerSalary()
-#writePlayerStats()
+writePlayerSalary()
+writePlayerStats()
