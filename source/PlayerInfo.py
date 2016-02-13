@@ -18,6 +18,32 @@ def getPlayerInfo(isRegex,playerurl,outpath):
 
 	return;
 
+def getPlayerInfoSinceYear(playerurl,outpath,year):
+	webpage = urlopen(playerurl).read()
+	soup = BeautifulSoup(webpage,  "html.parser") 
+	table = soup.find("table",{"id":"players"})
+	rows = table.find("tbody").findAll("tr")
+	name = '';
+	if rows:
+	   allrecords = []
+	   for row in rows:
+		tds = row.findAll('td')
+                toYear = int(tds[2].get_text())
+		flag = (toYear - year) >= 0
+		if flag:
+		    name = processHtmlString(tds[0].get_text())
+		    records = []
+		    for td in tds:
+			records.append(processHtmlString(td.get_text()))
+		    allrecords.append(','.join(records) + '\n')
+	   #write
+	   out = open(outpath,'a+')
+	   out.write(''.join(allrecords)) 
+	   out.close()
+	   print (name + ' is done! Going to sleep 1 second...')
+	   time.sleep(1) 
+	return;
+
 def getPlayerInfoByBS(playerurl,outpath): 	 
 	webpage = urlopen(playerurl).read()
 	soup = BeautifulSoup(webpage,  "html.parser") 

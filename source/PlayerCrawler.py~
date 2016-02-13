@@ -43,7 +43,7 @@ def writePlayerInfo():
 		#active players
    		#PlayerInfo.getPlayerInfo(True, href, playerprofilepath)
 		#players since 2000
-		PlayerInfo.getPlayerInfoSinceYear(href,playerprofilepath,year)
+		PlayerInfo.getPlayerInfoSinceYear(href,playerprofilepath,2000)
    	print ('Player Info All Done!')
 	return;
 
