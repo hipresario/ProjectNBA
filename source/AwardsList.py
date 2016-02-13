@@ -1,12 +1,11 @@
 #jianmin for IS5126 Project 1
-#compare Regex and BeautifulSoup to get URLs
+#get awards MVP, ROY, etc.
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
 import csv
 import os
 import time
 import re
-import timeit
 
 mainurl = 'http://www.basketball-reference.com'
 currentpath = os.path.dirname(os.path.abspath(__file__))
@@ -117,9 +116,30 @@ def getLeaguesIndex():
 	out.close()	
 	time.sleep(1)
 
-
-#getMVPList()
-#getROYList()
-#getSalaryCap()
-#getDefensivePlayer()
+def getMostImprovedPlayer():
+	lgurl = mainurl + '/awards/mip.html'
+	outpath = currentpath + '/data/mip.csv'
+	webpage = urlopen(lgurl).read()
+	soup = BeautifulSoup(webpage,  "html.parser")
+	table = soup.find('table',{'id':'NBA-mip'})
+	out = open(outpath,'a')
+	out.write('Season,Lg,Player,Vote,Age,Tm,G,MP,PTS,TRB,AST,STL,BLK,FG%,3P%,FT%,WS,WS/48\n')
+	out = open(outpath,'a')
+	if table:
+	    rows = table.find('tbody').findAll('tr')
+	    if rows:
+		for row in rows:
+		    tds = row.findAll('td')
+		    result = []
+		    for td in tds:
+		       result.append(processHtmlString(td.get_text()))
+		    out.write(','.join(result) + '\n')
+	out.close()	
+	time.sleep(1)
+#run
+getMVPList()
+getROYList()
+getSalaryCap()
+getDefensivePlayer()
 getLeaguesIndex()
+getMostImprovedPlayer()
