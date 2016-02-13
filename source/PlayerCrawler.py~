@@ -20,7 +20,7 @@ currentpath = os.path.dirname(os.path.abspath(__file__))
 #enable paths for active players
 #playerprofilepath = currentpath + '/data/active_players_profile.csv'
 #playersalarypath = currentpath + '/data/active_players_salary.csv'
-#playerurlspath = currentpath + '/data/active_player_urls.csv'
+activeplayerprofilepath = currentpath + '/data/active_player_urls.csv'
 #playerstatspath = currentpath + '/data/active_player_stats.csv'
 
 playerprofilepath = currentpath + '/data/player_since_2000_profile.csv'
@@ -41,9 +41,9 @@ def writePlayerInfo():
 	for url in urls:
    		href = mainurl + url
 		#active players
-   		#PlayerInfo.getPlayerInfo(True, href, playerprofilepath)
+   		PlayerInfo.getPlayerInfo(True, href, activeplayerprofilepath)
 		#players since 2000
-		PlayerInfo.getPlayerInfoSinceYear(href,playerprofilepath,2000)
+		#PlayerInfo.getPlayerInfoSinceYear(href,playerprofilepath,year)
    	print ('Player Info All Done!')
 	return;
 
@@ -93,5 +93,5 @@ def writePlayerStats():
 	print ('Stats All Done!')
 	return;
 writePlayerInfo()
-writePlayerSalary()
-writePlayerStats()
+#writePlayerSalary()
+#writePlayerStats()

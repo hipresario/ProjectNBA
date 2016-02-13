@@ -162,6 +162,8 @@ def writePlayerUrlsSinceYear(year):
 #writePlayerUrls()
 #writeTeamUrls()
 #writePlayerUrlsSinceYear(2000)
+
+
 #True for regex method
 def testAllPlayers():
 	getPlayerUrls(True)
@@ -171,8 +173,6 @@ def testIndexPlayers():
 
 def testTeamUrls():
 	getTeamUrls(True)
-
-#getPlayerUrlsSinceYear(2000)
 
 #print time for testing methods run time
 #print(timeit.Timer(testTeamUrls).timeit(number=1))
