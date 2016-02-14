@@ -1,6 +1,5 @@
 #jianmin for IS5126 Project 1
 #output active NBA teams season stas infor into csv files
-#each team outputs a file
 #logic: 
 # 1. from Team Index page to get each team URL
 # 2. from each URL page get the season stats 

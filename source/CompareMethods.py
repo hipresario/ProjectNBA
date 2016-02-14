@@ -74,6 +74,37 @@ def getPlayerUrls(isRegex):
  	#print(allplayerurls)
 	return allplayerurls;
 
+def getPlayerUrlsSinceYear(year):
+
+	def getPlayerUrlsAfterYear(year,playerurl):
+		webpage = urlopen(playerurl).read()
+		soup = BeautifulSoup(webpage,  "html.parser")
+		players = soup.find("table",{"id":"players"}).find("tbody").findAll('tr')
+		playerurls = []
+		if players:
+		   for i in players:
+		        tds = i.findAll('td')
+                        toYear = int(tds[2].get_text())
+			flag = (toYear - year) >= 0			
+			if flag: 
+			   href = i.find("a").get("href")
+		           if href:
+			      playerurls.append(href)
+		
+		return playerurls;
+
+	playerindex = getPlayersIndexUrls(True)
+	if playerindex:
+	  allplayerurls = []
+	  for i in playerindex:
+		url = mainurl + i
+		playerurls = getPlayerUrlsAfterYear(year,url)
+		allplayerurls.extend(playerurls)
+		print('Going to sleep 1 sec...')
+		time.sleep(1)
+ 	#print(allplayerurls)
+	return allplayerurls;		
+
 def getTeamUrls(isRegex):
 	def getTeamUrlsByBS(webpage):
 		soup = BeautifulSoup(webpage,  "html.parser")
@@ -97,15 +128,15 @@ def getTeamUrls(isRegex):
 	time.sleep(1)
 	return urls;
 
-
 def writePlayerUrls():
-	allplayerspath = currentpath + '/data/player_urls.csv';
+	allplayerspath = currentpath + '/data/active_player_urls.csv';
 	out = open(allplayerspath,'a')
 	urls = getPlayerUrls(True)
 	out.write('Player URL\n')
 	for i in urls:
            out.write(i + '\n')
 	out.close()
+	return
 
 def writeTeamUrls():
 	allteamspath = currentpath + '/data/team_urls.csv';
@@ -116,9 +147,23 @@ def writeTeamUrls():
 	   name = i.split('/')[2]
            out.write(name + ',' + i + '\n')
 	out.close()
-	
-#writePlayerUrls()
-#writeTeamUrls()
+	return
+
+def writePlayerUrlsSinceYear(year):
+      	allplayerspath = currentpath + '/data/player_since_2000_urls.csv';
+	out = open(allplayerspath,'a')
+	out.write('Player URL\n')
+	urls = getPlayerUrlsSinceYear(year)
+	for i in urls:
+           out.write(i + '\n')
+	out.close()
+	return
+
+#enable to run	
+writePlayerUrls()
+writeTeamUrls()
+writePlayerUrlsSinceYear(2000)
+
 
 #True for regex method
 def testAllPlayers():
@@ -129,8 +174,6 @@ def testIndexPlayers():
 
 def testTeamUrls():
 	getTeamUrls(True)
-
-
 
 #print time for testing methods run time
 #print(timeit.Timer(testTeamUrls).timeit(number=1))

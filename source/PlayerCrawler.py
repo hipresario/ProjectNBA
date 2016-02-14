@@ -1,9 +1,8 @@
 #jianmin for IS5126 Project 1
-#output active NBA player stats infor into csv files
-#each player outputs a file
+#output active NBA player basic infor, salary and stats infor into csv files
 #logic: 
-# 1. from all players Index page to get each player URL
-# 2. from each URL page get the season stas 
+# 1. from all players Index page to get each player URL, then get players basic infor
+# 2. from each URL page get the season stas and salary stats 
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
 import csv
@@ -17,11 +16,18 @@ import PlayerStats
 mainurl = 'http://www.basketball-reference.com'
 currentpath = os.path.dirname(os.path.abspath(__file__))
 
-#paths
-playerprofilepath = currentpath + '/data/players_profile.csv'
-playersalarypath = currentpath + '/data/players_salary.csv'
-playerurlspath = currentpath + '/data/player_urls.csv'
-playerstatspath = currentpath + '/data/player_stats.csv'
+#enable paths for active players
+#playerprofilepath = currentpath + '/data/active_players_profile.csv'
+#playersalarypath = currentpath + '/data/active_players_salary.csv'
+activeplayerprofilepath = currentpath + '/data/active_player_urls.csv'
+#playerstatspath = currentpath + '/data/active_player_stats.csv'
+
+playerprofilepath = currentpath + '/data/player_since_2000_profile.csv'
+playersalarypath = currentpath + '/data/player_since_2000_salary.csv'
+playerurlspath = currentpath + '/data/player_since_2000_urls.csv'
+playerstatspath = currentpath + '/data/player_since_2000_stats.csv'
+
+year = 2000
 
 def writePlayerInfo():
 	#create csv file with prefixed header tags
@@ -33,7 +39,10 @@ def writePlayerInfo():
 	urls = CompareMethods.getPlayersIndexUrls(True)
 	for url in urls:
    		href = mainurl + url
-   		PlayerInfo.getPlayerInfo(True, href, playerprofilepath)
+		#active players
+   		#PlayerInfo.getPlayerInfo(True, href, activeplayerprofilepath)
+		#players since 2000
+		PlayerInfo.getPlayerInfoSinceYear(href,playerprofilepath,year)
    	print ('Player Info All Done!')
 	return;
 
@@ -82,6 +91,7 @@ def writePlayerStats():
 		PlayerStats.getPlayerStats(href, playerstatspath)
 	print ('Stats All Done!')
 	return;
+
 writePlayerInfo()
-#writePlayerSalary()
-#writePlayerStats()
+writePlayerSalary()
+writePlayerStats()

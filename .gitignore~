@@ -14,7 +14,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.py~
-*.py[cod]
 # Windows shortcuts
 *.lnk
 
