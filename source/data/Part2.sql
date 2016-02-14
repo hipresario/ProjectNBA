@@ -1,5 +1,5 @@
 .mode csv
-.import player_stats.csv PLAYER_STATS
+.import player_since_2000_stats.csv PLAYER_STATS
 .import player_since_2000_profile.csv PLAYER_PROFILE
 .import player_since_2000_salary.csv PLAYER_SALARY
 .tables
