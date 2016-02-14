@@ -160,9 +160,9 @@ def writePlayerUrlsSinceYear(year):
 	return
 
 #enable to run	
-#writePlayerUrls()
-#writeTeamUrls()
-#writePlayerUrlsSinceYear(2000)
+writePlayerUrls()
+writeTeamUrls()
+writePlayerUrlsSinceYear(2000)
 
 
 #True for regex method

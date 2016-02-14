@@ -1,9 +1,8 @@
 #jianmin for IS5126 Project 1
-#output active NBA player stats infor into csv files
-#each player outputs a file
+#output active NBA player basic infor, salary and stats infor into csv files
 #logic: 
-# 1. from all players Index page to get each player URL
-# 2. from each URL page get the season stas 
+# 1. from all players Index page to get each player URL, then get players basic infor
+# 2. from each URL page get the season stas and salary stats 
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
 import csv

@@ -1,4 +1,5 @@
 #jianmin for IS5126 Project 1
+#get player basic info
 from urllib2 import urlopen 
 from bs4 import BeautifulSoup
 import time

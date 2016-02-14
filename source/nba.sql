@@ -32,6 +32,4 @@ CONF_WINS INT,
 CHAMP_WINS INT
 )
 
-Name,Season,Lg,Team,W,L,W/L%,Finish,SRS,Pace,Rel_Pace,ORtg,Rel_ORtg,DRtg,Rel_DRtg,Playoffs,Coaches,Top WS
-
 
