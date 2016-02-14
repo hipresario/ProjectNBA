@@ -1,76 +1,3 @@
-.mode csv
-.import player_since_2000_stats.csv PLAYER_STATS
-.import player_since_2000_profile.csv PLAYER_PROFILE
-.import player_since_2000_salary.csv PLAYER_SALARY
-.tables
-.mode column
-
-/* question 2 */
-
-/* How many active players are in 2011-2012 season */
-select count(distinct(name))
-from player_stats
-where season = '2011-12';
-/* ans 353 */
-
-/* How many play in each position in 2011-2012 season */
-select pos, count(*)
-from player_stats
-where season = '2011-12' group by pos;
-/* ans
-C           87        
-C-PF        1         
-PF          85        
-PG          76        
-SF          74        
-SF-PF       1         
-SG          78   
-Total 402 postion been played in season 11-12 
-*/
-
-/* What is the average age in 2011-2012 season */
-select avg(age)
-from (select name, age
-      from player_stats
-      where season = '2011-12' group by name);
-/* ans 25.64 */
-
-/* what is the average weight and average experience in 2011-2012 season */
-select avg(wt), avg(2011-since)
-from player_profile
-where since <= '2011' and til >= '2012';
-/* 223.300947867299  4.90995260663507 */
-
-/* what is the average salary */
-select avg(salary_view.sa_sum)
-from (select sum(salary) sa_sum
-      from player_salary
-      where season = '2011-12' group by name) salary_view;
-/* ans 4402734.65 */
-
-/* average career salary */
-select avg(player_salary_by_year.sa_sum)
-from (select sum(salary) sa_sum
-      from player_salary group by season, name) player_salary_by_year;
-/* ans 3875105 */
-
-/* question 3 */
-
-/* create a table with correct schema */
-create table player_salary_new (
-"Name" text,
-"Season" text,
-"Team" text,
-"Lg" text,
-"Salary" integer
-);
-insert into player_salary_new select * from player_salary where season='2011-12';
-
-/* who are the top 10% best paid players in the 2011-12 season? Which team did these players play for? */
-/* order salary in desc order */
-select name, team, sum(salary) sa_sum from player_salary_new group by name order by sa_sum desc limit (select count(distinct(name)) from player_salary_new)/10;
-
-/* ans
 Kobe Bryant  Los Angeles Lakers  25244493  
 Vince Carte  Dallas Mavericks    21300000  
 Kevin Garne  Boston Celtics      21247044  
@@ -116,12 +43,6 @@ Danny Grang  Indiana Pacers      12015904
 Al Horford   Atlanta Hawks       12000000  
 Andrew Bogu  Milwaukee Bucks     12000000  
 Joakim Noah  Chicago Bulls       12000000  
-*/
-
-/*b whare are the bottom 10% for 2011-2012 season, which team they play? */
-select name, team, sum(salary) sa_sum from player_salary_new group by name order by sa_sum limit (select count(distinct(name)) from player_salary_new)/10;
-
-/* ans
 Eric Dawson  San Antonio Spurs  38172     
 Courtney Fo  Los Angeles Clipp  42009     
 Garret Sile  Phoenix Suns       51097     
@@ -167,12 +88,6 @@ Jordan Will  New Jersey Nets    473604
 Josh Harrel  New York Knicks    473604    
 Julyan Ston  Denver Nuggets     473604    
 Justin Harp  Orlando Magic      473604    
-*/
-
-/* who are the middle 50% by pay? which teams did they play for*/
-select name, team, sum(salary) sa_sum from player_salary_new group by name order by sa_sum limit (select count(distinct(name)) from player_salary_new)/2 offset (select count(distinct(name)) from player_salary_new)/4;
-
-/* ans in increasing order
 Quincy Pondexter  Memphis Grizzlies  1153800   
 Wayne Ellington   Minnesota Timberw  1154040   
 Reggie Jackson    Oklahoma City Thu  1156320   
@@ -401,16 +316,6 @@ Kyle Lowry        Houston Rockets    5750000
 Francisco Garcia  Sacramento Kings   5800000   
 Josh Childress    Phoenix Suns       6000000   
 Wesley Matthews   Portland Trail Bl  6135160   
-*/
-
-/* over all seasons of the active players in the 2011-12 season, 
-how much money was paid to all users by season? */
-select old_t.season, sum(old_t.salary)
-from player_salary old_t
-join player_salary_new new_t on old_t.name=new_t.name
-group by old_t.season;
-
-/* The pay out for each season
 1994-95     6829800          
 1995-96     15162000         
 1996-97     34700500         
@@ -439,12 +344,6 @@ group by old_t.season;
 2019-20     199038930        
 2020-21     2170000          
 2021-22     2170000          
-*/
-
-/* How many players were active in each season */
-select old_t.season, count(distinct(old_t.name)) from player_salary old_t join player_salary_new new_t on old_t.name=new_t.name group by old_t.season;
-
-/* ans
 1994-95     3                          
 1995-96     6                          
 1996-97     14                         
@@ -473,19 +372,6 @@ select old_t.season, count(distinct(old_t.name)) from player_salary old_t join p
 2019-20     11                         
 2020-21     1                          
 2021-22     1                          
-*/
-
-/* what is the average per player by season? assume average pay*/
-select pay.t_season, pay.t_salary/num_player.num_p
-from (select old_t.season t_season, sum(old_t.salary) t_salary
-from player_salary old_t
-join player_salary_new new_t on old_t.name=new_t.name
-group by old_t.season) pay
-join
-(select old_t.season num_p_season, count(distinct(old_t.name)) num_p from player_salary old_t join player_salary_new new_t on old_t.name=new_t.name group by old_t.season) num_player
-on pay.t_season = num_player.num_p_season;
-
-/*ans
 1994-95     2276600                      
 1995-96     2527000                      
 1996-97     2478607                      
@@ -514,5 +400,3 @@ on pay.t_season = num_player.num_p_season;
 2019-20     18094448                     
 2020-21     2170000                      
 2021-22     2170000                      
-*/
-

@@ -2,30 +2,30 @@
 .import player_since_2000_stats.csv PLAYER_STATS
 .import player_since_2000_profile.csv PLAYER_PROFILE
 .import player_since_2000_salary.csv PLAYER_SALARY
-.tables
 .mode column
 
 /* question 2 */
-
+.output Q2.txt
 /* How many active players are in 2011-2012 season */
 select count(distinct(name))
 from player_stats
 where season = '2011-12';
-/* ans 353 */
+/* ans 478 */
 
 /* How many play in each position in 2011-2012 season */
 select pos, count(*)
 from player_stats
 where season = '2011-12' group by pos;
 /* ans
-C           87        
+C           121       
 C-PF        1         
-PF          85        
-PG          76        
-SF          74        
+PF          106       
+PF-SF       1         
+PG          114       
+SF          105       
 SF-PF       1         
-SG          78   
-Total 402 postion been played in season 11-12 
+SG          102      
+Total 551 postion been played in season 11-12 
 */
 
 /* What is the average age in 2011-2012 season */
@@ -33,7 +33,7 @@ select avg(age)
 from (select name, age
       from player_stats
       where season = '2011-12' group by name);
-/* ans 25.64 */
+/* ans 26.64 */
 
 /* what is the average weight and average experience in 2011-2012 season */
 select avg(wt), avg(2011-since)
@@ -55,7 +55,7 @@ from (select sum(salary) sa_sum
 /* ans 3875105 */
 
 /* question 3 */
-
+.output Q3.txt
 /* create a table with correct schema */
 create table player_salary_new (
 "Name" text,
@@ -68,9 +68,13 @@ insert into player_salary_new select * from player_salary where season='2011-12'
 
 /* who are the top 10% best paid players in the 2011-12 season? Which team did these players play for? */
 /* order salary in desc order */
-select name, team, sum(salary) sa_sum from player_salary_new group by name order by sa_sum desc limit (select count(distinct(name)) from player_salary_new)/10;
-
-/* ans
+select name, team, sum(salary) sa_sum
+from player_salary_new
+group by name
+order by sa_sum desc
+limit (select count(distinct(name))
+       from player_salary_new)/10;
+/* ans:
 Kobe Bryant  Los Angeles Lakers  25244493  
 Vince Carte  Dallas Mavericks    21300000  
 Kevin Garne  Boston Celtics      21247044  
@@ -119,7 +123,11 @@ Joakim Noah  Chicago Bulls       12000000
 */
 
 /*b whare are the bottom 10% for 2011-2012 season, which team they play? */
-select name, team, sum(salary) sa_sum from player_salary_new group by name order by sa_sum limit (select count(distinct(name)) from player_salary_new)/10;
+select name, team, sum(salary) sa_sum
+from player_salary_new
+group by name order by sa_sum
+limit (select count(distinct(name))
+       from player_salary_new)/10;
 
 /* ans
 Eric Dawson  San Antonio Spurs  38172     
@@ -516,3 +524,5 @@ on pay.t_season = num_player.num_p_season;
 2021-22     2170000                      
 */
 
+.output stdout
+.exit
