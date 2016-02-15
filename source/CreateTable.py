@@ -10,7 +10,28 @@ def readCSVFile(url):
 	infile = csv.DictReader(open(url,'rb'), delimiter=',')
 	return infile;
 
- 
+def createPlayerProfile():
+	sql = '''create table if not exists player_profile(
+		Player,FromYear,ToYear,Pos,Ht,Wt,DOB,College
+ 	       )'''
+	conn = DBConnection.getConnection()
+	conn.execute(sql)
+	print('player_profile table created...')
+	conn.close()
+	return
+
+def loadPlayerProfileData():
+	conn = DBConnection.getConnection()
+	path = currentpath + '/data/player_since_2000_profile.csv'
+	infile = readCSVFile(path)
+	to_db = [(row['Player'],row['From'],row['To'], row['Pos'], row['Ht'],row['Wt'],row['DOB'],row['College']) for row in infile]
+        cur = conn.cursor()
+	cur.executemany("INSERT INTO player_profile (Player,FromYear,ToYear,Pos,Ht,Wt,DOB,College) VALUES (?,?,?,?,?,?,?,?);", to_db)
+	conn.commit()
+	print('Load Player_profile done.')
+	conn.close()
+	return
+
 def createPlayerSalary():
 	sql = '''CREATE TABLE IF NOT EXISTS PLAYER_SALARY(
 		 Name,Season,Team,Lg,Salary
@@ -23,7 +44,7 @@ def createPlayerSalary():
 
 def loadPlayerSalaryData():
 	conn = DBConnection.getConnection()
-	path = currentpath + '/data/players_salary.csv'
+	path = currentpath + '/data/player_since_2000_salary.csv'
 	infile = readCSVFile(path)
 	to_db = [(row['Name'],row['Season'],row['Team'], row['Lg'], row['Salary']) for row in infile]
         cur = conn.cursor()
@@ -32,6 +53,51 @@ def loadPlayerSalaryData():
 	print('Load PLAYER_SALARY done.')
 	conn.close()
 	return
+
+def createPlayerStats():
+	sql = '''CREATE TABLE IF NOT EXISTS PLAYER_STATS(
+		 Name,Season,Age,Tm,Lg,Pos,G,GS,MP,FG,FGA,FG%,3P,3PA,3P%,2P,2PA,2P%,eFG%,FT,FTA,FT%,ORB,DRB,TRB,AST,STL,
+		 BLK,TOV,PF,PTS
+		)'''
+	conn = DBConnection.getConnection()
+	conn.execute(sql)
+	print('PLAYER_STATS table created...')
+	conn.close()
+	return 
+
+def loadPlayerStatsData():
+	conn = DBConnection.getConnection()
+	path = currentpath + '/data/player_since_2000_stats.csv'
+	infile = readCSVFile(path)
+	to_db = [(row['Name'],row['Season'],row['Team'], row['Lg'], row['Salary']) for row in infile]
+        cur = conn.cursor()
+	cur.executemany("INSERT INTO PLAYER_SALARY (Name,Season,Age,Tm,Lg,Pos,G,GS,MP,FG,FGA,FG%,3P,3PA,3P%,2P,2PA,2P%,eFG%,FT,FTA,FT%,ORB,DRB,TRB,AST,STL,
+		 BLK,TOV,PF,PTS) VALUES (?,?,?,?,?);", to_db)
+	conn.commit()
+	print('Load PLAYER_SALARY done.')
+	conn.close()
+	return
+
+
+def createPlayerStatsFrom2011To12():
+	sql = '''CREATE TABLE IF NOT EXISTS PLAYER_STATS_2011_12(
+		 Name,Season,Age,Tm,Pos)'''
+	conn = DBConnection.getConnection()
+	conn.execute(sql)
+	print('PLAYER_STATS_2011_12 table created...')
+	conn.close()
+	return 
+
+def loadPlayerStatsDataFrom2011():
+	conn = DBConnection.getConnection()
+	cur.executemany("INSERT INTO PLAYER_STATS_2011_12 (Name,Season,Age,Tm,Lg,Pos,G,GS,MP,FG,FGA,FG%,3P,3PA,3P%,2P,2PA,2P%,eFG%,FT,FTA,FT%,ORB,DRB,TRB,AST,STL,BLK,TOV,PF,PTS) VALUES ( ))
+	conn.commit()
+	print('Load PLAYER_SALARY done.')
+	conn.close()
+	return
+
+
+
 
 def createTeamsProfile():
 	sql = '''CREATE TABLE IF NOT EXISTS TEAMS_PROFILE(
@@ -136,6 +202,7 @@ def readPlayerSalary():
 #createPlayerSalary()
 #loadPlayerSalaryData()
 #readPlayerSalary()
-
-
+#createPlayerProfile()
+#loadPlayerProfileData()
+#createPlayerFrom2011To2012();
 

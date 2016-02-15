@@ -10,3 +10,6 @@ def getConnection():
 	if connection:
 	    print("Connection is ready...")
 	return connection;
+
+
+#getConnection()

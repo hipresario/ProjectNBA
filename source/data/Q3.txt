@@ -43,6 +43,7 @@ Danny Grang  Indiana Pacers      12015904
 Al Horford   Atlanta Hawks       12000000  
 Andrew Bogu  Milwaukee Bucks     12000000  
 Joakim Noah  Chicago Bulls       12000000  
+
 Eric Dawson  San Antonio Spurs  38172     
 Courtney Fo  Los Angeles Clipp  42009     
 Garret Sile  Phoenix Suns       51097     
@@ -88,6 +89,7 @@ Jordan Will  New Jersey Nets    473604
 Josh Harrel  New York Knicks    473604    
 Julyan Ston  Denver Nuggets     473604    
 Justin Harp  Orlando Magic      473604    
+
 Quincy Pondexter  Memphis Grizzlies  1153800   
 Wayne Ellington   Minnesota Timberw  1154040   
 Reggie Jackson    Oklahoma City Thu  1156320   
