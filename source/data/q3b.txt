@@ -1,0 +1,45 @@
+Eric Dawson  San Antonio Spurs  38172     
+Courtney Fo  Los Angeles Clipp  42009     
+Garret Sile  Phoenix Suns       51097     
+Andre Emmet  New Jersey Nets    61433     
+Ben Uzoh     Cleveland Cavalie  61433     
+Ike Diogu    San Antonio Spurs  64028     
+Brian Skinn  Memphis Grizzlies  65446     
+Larry Owens  New Jersey Nets    86052     
+Dennis Horn  New Jersey Nets    91642     
+Malcolm Tho  San Antonio Spurs  103104    
+Manny Harri  Cleveland Cavalie  122942    
+Carldell Jo  New Orleans Horne  168035    
+Mychel Thom  Cleveland Cavalie  168035    
+Earl Barron  Golden State Warr  185588    
+Donald Sloa  New Orleans Horne  198629    
+Jeff Foote   New Orleans Horne  225341    
+Darington H  Milwaukee Bucks    245884    
+Mickell Gla  Miami Heat         248263    
+Derrick Car  Los Angeles Laker  270427    
+Hamady N'Di  Washington Wizard  270427    
+Jeff Adrien  Houston Rockets    270427    
+Mike James   Chicago Bulls      277566    
+Greg Smith   Houston Rockets    301733    
+DaJuan Summ  New Orleans Horne  303137    
+Francisco E  Philadelphia 76er  305792    
+Josh Davis   Memphis Grizzlies  314041    
+Lance Thoma  New Orleans Horne  328444    
+Walker Russ  Detroit Pistons    374289    
+Larry Hughe  Orlando Magic      414443    
+Solomon Jon  New Orleans Horne  440353    
+Andrew Goud  Los Angeles Laker  473604    
+Charles Jen  Golden State Warr  473604    
+Chris Wrigh  Golden State Warr  473604    
+Cory Higgin  Charlotte Bobcats  473604    
+Darius Morr  Los Angeles Laker  473604    
+DeAndre Lig  Orlando Magic      473604    
+E'Twaun Moo  Boston Celtics     473604    
+Isaiah Thom  Sacramento Kings   473604    
+Ivan Johnso  Atlanta Hawks      473604    
+Jerome Jord  New York Knicks    473604    
+Jon Leuer    Milwaukee Bucks    473604    
+Jordan Will  New Jersey Nets    473604    
+Josh Harrel  New York Knicks    473604    
+Julyan Ston  Denver Nuggets     473604    
+Justin Harp  Orlando Magic      473604

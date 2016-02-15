@@ -1,0 +1,228 @@
+Quincy Pondexter  Memphis Grizzlies  1153800   
+Wayne Ellington   Minnesota Timberw  1154040   
+Reggie Jackson    Oklahoma City Thu  1156320   
+Earl Clark        Orlando Magic      1160000   
+Dominique Jones   Dallas Mavericks   1193280   
+Taj Gibson        Chicago Bulls      1195680   
+Royal Ivey        Oklahoma City Thu  1200000   
+Brian Cook        Los Angeles Clipp  1223166   
+Jannero Pargo     Atlanta Hawks      1223166   
+Jason Kapono      Los Angeles Laker  1223166   
+Marquis Daniels   Boston Celtics     1223166   
+Maurice Evans     Washington Wizard  1223166   
+Sasha Pavlovic    Boston Celtics     1223166   
+Willie Green      Atlanta Hawks      1223166   
+Eddy Curry        Miami Heat         1229255   
+Jared Jeffries    New York Knicks    1229255   
+Rasual Butler     Toronto Raptors    1229255   
+Reggie Evans      Los Angeles Clipp  1229255   
+Rodrigue Beauboi  Dallas Mavericks   1236720   
+Damion James      New Jersey Nets    1243080   
+Kenneth Faried    Denver Nuggets     1254720   
+Byron Mullens     Charlotte Bobcats  1288200   
+Serge Ibaka       Oklahoma City Thu  1288200   
+Trevor Booker     Washington Wizard  1294920   
+Hamed Haddadi     Memphis Grizzlies  1300000   
+Nolan Smith       Portland Trail Bl  1306920   
+Michael Redd      Phoenix Suns       1308506   
+Omri Casspi       Cleveland Cavalie  1341960   
+Elliot Williams   Portland Trail Bl  1348800   
+Anthony Carter    Toronto Raptors    1352181   
+Brian Cardinal    Dallas Mavericks   1352181   
+Brian Scalabrine  Chicago Bulls      1352181   
+Jamaal Magloire   Toronto Raptors    1352181   
+Jason Collins     Atlanta Hawks      1352181   
+Jerry Stackhouse  Atlanta Hawks      1352181   
+Juwan Howard      Miami Heat         1352181   
+Mike Bibby        New York Knicks    1352181   
+Tony Battie       Philadelphia 76er  1352181   
+Tracy McGrady     Atlanta Hawks      1352181   
+Troy Murphy       Los Angeles Laker  1352181   
+Vladimir Radmano  Atlanta Hawks      1352181   
+Craig Brackins    Philadelphia 76er  1404960   
+Tobias Harris     Milwaukee Bucks    1418160   
+Darren Collison   Indiana Pacers     1455960   
+James Anderson    San Antonio Spurs  1463520   
+Chris Singleton   Washington Wizard  1485000   
+Gary Forbes       Toronto Raptors    1500000   
+Greg Oden         Portland Trail Bl  1500000   
+James Jones       Miami Heat         1500000   
+Jeff Ayres        Indiana Pacers     1500000   
+Sebastian Telfai  Phoenix Suns       1500000   
+Eric Maynor       Oklahoma City Thu  1516680   
+Avery Bradley     Boston Celtics     1524480   
+Iman Shumpert     New York Knicks    1563120   
+Gustavo Ayon      New Orleans Horne  1567500   
+Jeff Teague       Atlanta Hawks      1579920   
+Eric Bledsoe      Los Angeles Clipp  1596360   
+Nikola Vucevic    Philadelphia 76er  1645400   
+Ty Lawson         Denver Nuggets     1654440   
+Renaldo Balkman   New York Knicks    1675000   
+Kevin Seraphin    Washington Wizard  1680360   
+Kawhi Leonard     San Antonio Spurs  1731960   
+Jrue Holiday      Philadelphia 76er  1741440   
+Luke Babbitt      Portland Trail Bl  1768800   
+Marcus Morris     Houston Rockets    1823280   
+James Johnson     Toronto Raptors    1833120   
+Omer Asik         Chicago Bulls      1857500   
+Larry Sanders     Milwaukee Bucks    1861920   
+Matt Barnes       Los Angeles Laker  1906200   
+Markieff Morris   Phoenix Suns       1919160   
+Austin Daye       Detroit Pistons    1929600   
+Patrick Patterso  Houston Rockets    1959960   
+Dante Cunningham  Memphis Grizzlies  2000000   
+Earl Watson       Utah Jazz          2000000   
+D.J. White        Charlotte Bobcats  2001167   
+Donte Greene      Sacramento Kings   2015896   
+Alec Burks        Utah Jazz          2020200   
+Darrell Arthur    Memphis Grizzlies  2027119   
+Anthony Tolliver  Minnesota Timberw  2050000   
+Ed Davis          Toronto Raptors    2063040   
+George Hill       Indiana Pacers     2086360   
+Goran Dragic      Houston Rockets    2108000   
+Klay Thompson     Golden State Warr  2126520   
+Tyler Hansbrough  Indiana Pacers     2138040   
+Josh Howard       Utah Jazz          2150000   
+Nicolas Batum     Portland Trail Bl  2155365   
+Xavier Henry      New Orleans Horne  2171640   
+Rudy Fernandez    Denver Nuggets     2180443   
+Kosta Koufos      Denver Nuggets     2203792   
+Courtney Lee      Houston Rockets    2225093   
+Jimmer Fredette   Sacramento Kings   2238360   
+Ryan Anderson     Orlando Magic      2244601   
+Ben Wallace       Detroit Pistons    2246400   
+Keyon Dooling     Boston Celtics     2246400   
+Anthony Parker    Cleveland Cavalie  2250000   
+Gerald Henderson  Charlotte Bobcats  2250600   
+Cole Aldrich      Oklahoma City Thu  2286000   
+J.J. Hickson      Sacramento Kings   2354537   
+Kemba Walker      Charlotte Bobcats  2356320   
+Terrence William  Houston Rockets    2369040   
+J.R. Smith        New York Knicks    2382353   
+Lou Amundson      Indiana Pacers     2403000   
+Paul George       Indiana Pacers     2406240   
+Quentin Richards  Orlando Magic      2446600   
+JaVale McGee      Washington Wizard  2462400   
+Ryan Hollins      Cleveland Cavalie  2483333   
+Brandon Jennings  Milwaukee Bucks    2493720   
+Aaron Gray        Toronto Raptors    2500000   
+DeShawn Stevenso  New Jersey Nets    2500000   
+Jason Smith       New Orleans Horne  2500000   
+Kenyon Martin     Los Angeles Clipp  2500000   
+Reggie Williams   Charlotte Bobcats  2500000   
+Gordon Hayward    Utah Jazz          2532960   
+Ersan Ilyasova    Milwaukee Bucks    2541000   
+Brandon Knight    Detroit Pistons    2563320   
+Roy Hibbert       Indiana Pacers     2588590   
+DeMar DeRozan     Toronto Raptors    2625000   
+Antonio McDyess   San Antonio Spurs  2640000   
+Dahntay Jones     Indiana Pacers     2700000   
+Marreese Speight  Memphis Grizzlies  2721255   
+Eduardo Najera    Charlotte Bobcats  2750000   
+Al-Farouq Aminu   New Orleans Horne  2755560   
+Bismack Biyombo   Charlotte Bobcats  2798040   
+Jordan Hill       Houston Rockets    2855760   
+Robin Lopez       Phoenix Suns       2862602   
+Anthony Randolph  Minnesota Timberw  2911231   
+Brandon Rush      Golden State Warr  2956658   
+Chris Wilcox      Boston Celtics     3000000   
+Jeff Foster       Indiana Pacers     3000000   
+Josh McRoberts    Los Angeles Laker  3000000   
+Shane Battier     Miami Heat         3000000   
+Shawne Williams   New Jersey Nets    3000000   
+Jason Thompson    Sacramento Kings   3001284   
+Greg Monroe       Detroit Pistons    3007920   
+Jerryd Bayless    Toronto Raptors    3042280   
+Corey Brewer      Denver Nuggets     3059000   
+Jan Vesely        Washington Wizard  3065040   
+Brook Lopez       New Jersey Nets    3076983   
+Stephen Curry     Golden State Warr  3117120   
+Tony Allen        Memphis Grizzlies  3150000   
+D.J. Augustin     Charlotte Bobcats  3236470   
+Raja Bell         Utah Jazz          3240000   
+Johan Petro       New Jersey Nets    3250000   
+Will Bynum        Detroit Pistons    3250000   
+Nick Collison     Oklahoma City Thu  3272997   
+Ekpe Udoh         Golden State Warr  3294960   
+Thabo Sefolosha   Oklahoma City Thu  3300000   
+Matt Bonner       San Antonio Spurs  3315000   
+Daequan Cook      Oklahoma City Thu  3341558   
+Timofey Mozgov    Denver Nuggets     3343896   
+Marco Belinelli   New Orleans Horne  3377604   
+C.J. Watson       Chicago Bulls      3400000   
+Derek Fisher      Los Angeles Laker  3400000   
+Jonny Flynn       Houston Rockets    3414720   
+Ricky Rubio       Minnesota Timberw  3480120   
+Carlos Delfino    Milwaukee Bucks    3500000   
+Chris Duhon       Orlando Magic      3500000   
+Shannon Brown     Phoenix Suns       3500000   
+Shaun Livingston  Milwaukee Bucks    3500000   
+Joel Anthony      Miami Heat         3600000   
+DeMarcus Cousins  Sacramento Kings   3627720   
+Tiago Splitter    San Antonio Spurs  3672000   
+Luke Ridnour      Minnesota Timberw  3680000   
+Nick Young        Washington Wizard  3695857   
+C.J. Miles        Utah Jazz          3700000   
+Tristan Thompson  Cleveland Cavalie  3726600   
+Mike Dunleavy     Milwaukee Bucks    3750000   
+Nazr Mohammed     Oklahoma City Thu  3750000   
+Udonis Haslem     Miami Heat         3780000   
+Dorell Wright     Golden State Warr  3823000   
+Eric Gordon       New Orleans Horne  3831184   
+Matt Carroll      Charlotte Bobcats  3900000   
+Anthony Morrow    New Jersey Nets    4000000   
+Hakim Warrick     Phoenix Suns       4000000   
+Jordan Farmar     New Jersey Nets    4000000   
+Mario Chalmers    Miami Heat         4000000   
+Ryan Gomes        Los Angeles Clipp  4000000   
+Steve Blake       Los Angeles Laker  4000000   
+Wesley Johnson    Minnesota Timberw  4006080   
+Spencer Hawes     Philadelphia 76er  4051024   
+Charlie Bell      Golden State Warr  4099920   
+Enes Kanter       Utah Jazz          4133280   
+Tyreke Evans      Sacramento Kings   4151640   
+Danilo Gallinari  Denver Nuggets     4190182   
+Chris Andersen    Denver Nuggets     4234000   
+Brandon Bass      Boston Celtics     4250000   
+Jared Dudley      Phoenix Suns       4250000   
+Randy Foye        Los Angeles Clipp  4250000   
+Ramon Sessions    Cleveland Cavalie  4257973   
+J.J. Barea        Minnesota Timberw  4300000   
+Ronny Turiaf      Washington Wizard  4360000   
+Daniel Gibson     Cleveland Cavalie  4403834   
+Derrick Favors    Utah Jazz          4443360   
+Jonas Jerebko     Detroit Pistons    4500000   
+Nikola Pekovic    Minnesota Timberw  4503600   
+Derrick Williams  Minnesota Timberw  4602720   
+James Harden      Oklahoma City Thu  4604760   
+Linas Kleiza      Toronto Raptors    4605000   
+Kevin Love        Minnesota Timberw  4609701   
+Ronnie Brewer     Chicago Bulls      4710000   
+Zaza Pachulia     Atlanta Hawks      4750000   
+Brad Miller       Minnesota Timberw  4752000   
+Darko Milicic     Minnesota Timberw  4776500   
+Evan Turner       Philadelphia 76er  4947840   
+Jamal Crawford    Portland Trail Bl  5000000   
+Jarrett Jack      New Orleans Horne  5000000   
+Jason Maxiell     Detroit Pistons    5000000   
+Kyle Korver       Chicago Bulls      5000000   
+Luc Mbah a Moute  Milwaukee Bucks    5000000   
+Russell Westbroo  Oklahoma City Thu  5082416   
+Hasheem Thabeet   Houston Rockets    5127720   
+Kyrie Irving      Cleveland Cavalie  5144280   
+Lou Williams      Philadelphia 76er  5176000   
+Chuck Hayes       Sacramento Kings   5250000   
+Martell Webster   Minnesota Timberw  5256000   
+Jason Richardson  Orlando Magic      5395000   
+Mike Miller       Miami Heat         5400000   
+Nate Robinson     Golden State Warr  5483307   
+Amir Johnson      Toronto Raptors    5500000   
+John Wall         Washington Wizard  5530080   
+Channing Frye     Phoenix Suns       5600000   
+O.J. Mayo         Memphis Grizzlies  5632637   
+Luke Walton       Los Angeles Laker  5680000   
+Blake Griffin     Los Angeles Clipp  5731080   
+Kyle Lowry        Houston Rockets    5750000   
+Francisco Garcia  Sacramento Kings   5800000   
+Josh Childress    Phoenix Suns       6000000   
+Wesley Matthews   Portland Trail Bl  6135160

@@ -1,0 +1,45 @@
+Kobe Bryant  Los Angeles Lakers  25244493  
+Vince Carte  Dallas Mavericks    21300000  
+Kevin Garne  Boston Celtics      21247044  
+Tim Duncan   San Antonio Spurs   21164619  
+Rashard Lew  Washington Wizards  21136631  
+Gilbert Are  Orlando Magic       19269307  
+Dirk Nowitz  Dallas Mavericks    19092873  
+Pau Gasol    Los Angeles Lakers  18714150  
+Carmelo Ant  New York Knicks     18518574  
+Amar'e Stou  New York Knicks     18217705  
+Dwight Howa  Orlando Magic       18091770  
+Joe Johnson  Atlanta Hawks       18038573  
+Richard Ham  Chicago Bulls       17500000  
+Elton Brand  Philadelphia 76ers  17059727  
+Chris Paul   Los Angeles Clippe  16359805  
+Deron Willi  New Jersey Nets     16359805  
+Brandon Roy  Portland Trail Bla  16032144  
+Chris Bosh   Miami Heat          16022500  
+LeBron Jame  Miami Heat          16022500  
+Dwyane Wade  Miami Heat          15691000  
+Kevin Duran  Oklahoma City Thun  15506632  
+Paul Pierce  Boston Celtics      15333334  
+Baron Davis  New York Knicks     15252181  
+Zach Randol  Memphis Grizzlies   15200000  
+Antawn Jami  Cleveland Cavalier  15076715  
+Rudy Gay     Memphis Grizzlies   15032144  
+Andrew Bynu  Los Angeles Lakers  14900000  
+Chauncey Bi  Los Angeles Clippe  14200000  
+Chris Kaman  New Orleans Hornet  14030000  
+Al Jefferso  Utah Jazz           14000000  
+Andre Iguod  Philadelphia 76ers  13531750  
+Carlos Booz  Chicago Bulls       13500000  
+Tyson Chand  New York Knicks     13107837  
+Nene         Denver Nuggets      13000000  
+Manu Ginobi  San Antonio Spurs   12981038  
+Marc Gasol   Memphis Grizzlies   12922194  
+Emeka Okafo  New Orleans Hornet  12541812  
+Tony Parker  San Antonio Spurs   12500000  
+Josh Smith   Atlanta Hawks       12400000  
+LaMarcus Al  Portland Trail Bla  12372000  
+Luol Deng    Chicago Bulls       12325000  
+Danny Grang  Indiana Pacers      12015904  
+Al Horford   Atlanta Hawks       12000000  
+Andrew Bogu  Milwaukee Bucks     12000000  
+Joakim Noah  Chicago Bulls       12000000
